@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+	<link href="frontpage.css" rel="stylesheet" type="text/css">
+	<script>
+	function Validation()
+	{
+		var emailid = document.signup_form.email.value;
+		var num = document.signup_form.phone.value;
+		atpos = emailid.indexOf("@"); 
+		dotpos = emailid.lastIndexOf("."); 
+
+	    if (atpos< 1 || ( dotpos - atpos<=3 ) || (emailid.length-1)==dotpos)           
+         { 
+           alert("Please enter correct email ID");
+		   document.signup_form.email.focus() ;   
+		   return false;          
+		             
+         }
+        else if (isNaN(num) || num.length!=10)
+         {    
+			 document.getElementById("phone");      
+			 alert("Please enter numeric 10 digit phone number");
+			document.signup_form.phone.focus() ; 		 
+			     return false;
+		 }
+         else
+         {    
+          	alert("Form validation completed. Form submitted successfully!!");
+          	return true;
+         } 
+	}; 
+	
+	</script>
+	<style type="text/css">
+	body
+	{
+  		background-color:#FFFACD;
+	}
+	
+	</style>
+	
+<title>Insert title here</title>
+</head>
+<body>
+	<div class="login_box">
+		<h2 style="text-align:center;">Sign Up</h2>
+		<div class="signup_page_data">
+			<form  method="post" name = "signup_form" id="form1">
+			  <div class="container">
+			  	
+			    <label for="name"><b>Name</b></label>
+			    <input type="text" placeholder="Name here" name="name" required><br><br>
+				
+			    <label for="gender"><b>Gender</b></label><br>
+		 	    <input type="radio" id="male" name="gender" value="male">
+				<label for="male">Male</label><br>
+				<input type="radio" id="female" name="gender" value="female">
+				<label for="female">Female</label><br>
+				<input type="radio" id="other" name="gender" value="other">
+				<label for="other">Other</label><br><br>
+
+			    <label for="dob"><b>Date of birth</b></label>
+			    <input type="date" max ="2021-05-15" placeholder="DOB" name="dob" required><br><br>
+
+
+			    <label for="email"><b>Email</b></label>&nbsp
+			    <input type="email" placeholder="Enter email-id" name="email" required><br><br>
+
+			    <label for="phone"><b>Contact</b></label>
+			    <input type="text" placeholder="Enter contact number" name="phone" required><br><br>
+			    
+				<label for="address">Address</label>
+
+				<textarea id="address" name="address" rows="2" cols="50">
+				</textarea>	<br><br>	    
+			    
+			    <button type="submit" onclick="return (Validation());">Register</button>
+			  </div>
+	
+			</form>
+		</div>	
+	</div>
+</body>
+</html>

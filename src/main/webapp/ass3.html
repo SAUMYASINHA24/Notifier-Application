@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script>
+
+	function generateTable()
+	{
+		var number = document.multiplication.number.value;
+		for(var i=0;i<10;i++)
+			{
+				
+				document.getElementById('result').innerHTML += "<pre>" + (i+1)+"*"+number+" = "+(i+1)*number+"\n" + "</pre>";
+			}
+		
+	}
+</script>
+</head>
+<body>
+
+<div id = "result">
+
+		<form name = "multiplication">
+		
+			Number  <input type="text" name = "number" id = "number"><br><br>
+			<button type="submit" id = "generate" onclick="return (generateTable());">Generate</button>
+		</form>
+		
+
+</div>
+</body>
+</html>
